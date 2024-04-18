@@ -10,8 +10,6 @@ import argparse
 from utils import get_filename
 
 
-detector = Detector(device="cuda")
-
 
 # Parse command-line arguments
 parser = argparse.ArgumentParser(description='Process audio files with Py-Feat.')
@@ -19,6 +17,9 @@ parser.add_argument('input_dir', type=str, help='Input directory for video files
 parser.add_argument('output_dir', type=str, help='Output directory for CSV files')
 
 args = parser.parse_args()
+
+detector = Detector(device="cuda")
+
 
 # Use arguments for input and output directories
 input_dir = args.input_dir
